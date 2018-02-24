@@ -1,28 +1,26 @@
 import java.util.Scanner;
 
-public class HelpCommand {
-	
-
-
+public class HelpCommand implements Commandable {
 	public String help;
 
 	public HelpCommand() { 
-		Scanner prompt = new Scanner(System.in);
-		if (help == "yes") { 
-			System.out.println("lets get help");
-		} else if (help == "no") { 
-			System.out.println("no help required"); 
+		help = "help";
+		}
+	
+	int doMatch(String inout) {
+		if (help.equalsIgnoreCase(input)) {
+			return 1;
 		} 
-		else { 
-			System.out.println("incorrect entry");
-		}
-		prompt.close();
-		//return help;
-	
-		}
 		
-	
+		return 0;
+	}	
+
+	void doCommand(String input) {
+		//do stuff here
+		// in this case, print out the help for the game
 	}
+	
+}
 	
 	
 
